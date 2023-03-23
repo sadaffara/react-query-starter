@@ -1,0 +1,149 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "name": "The Notebook",
+      "genre": "Romance"
+    },
+    {
+      "id": 2,
+      "name": "Forrest Gump",
+      "genre": "Drama"
+    },
+    {
+      "id": 3,
+      "name": "The Mask",
+      "genre": "Comedy"
+    },
+    {
+      "id": 4,
+      "name": "Liar Liark",
+      "genre": "Comedy"
+    },
+    {
+      "id": 5,
+      "name": "The Matrix",
+      "genre": "Sci-fi"
+    },
+    {
+      "id": 6,
+      "name": "The Arrival",
+      "genre": "Sci-Fi"
+    },
+    {
+      "id": 7,
+      "name": "The Shining",
+      "genre": "Horror"
+    },
+    {
+      "id": 8,
+      "name": "Harry Potter",
+      "genre": "Fantasy"
+    },
+    {
+      "id": 9,
+      "name": "Home Alone",
+      "genre": "Comedy"
+    },
+    {
+      "id": 10,
+      "name": "The Titanic",
+      "genre": "Romance"
+    },
+    {
+      "id": 11,
+      "name": "Narnia",
+      "genre": "Fantasy"
+    },
+    {
+      "id": 12,
+      "name": "Notting Hill",
+      "genre": "Romance"
+    },
+    {
+      "id": 13,
+      "name": "The Help",
+      "genre": "Drama"
+    },
+    {
+      "id": 14,
+      "name": "The Conjuring",
+      "genre": "Horror"
+    },
+    {
+      "id": 15,
+      "name": "Pride and Prejudice",
+      "genre": "Romance"
+    },
+    {
+      "id": 16,
+      "name": "The Fault In Our Stars",
+      "genre": "Drama"
+    },
+    {
+      "id": 17,
+      "name": "Avatar",
+      "genre": "Fantasy"
+    },
+    {
+      "id": 19,
+      "name": "The Martian",
+      "genre": "Sci-Fi"
+    },
+    {
+      "id": 18,
+      "name": "The 40 Year Old Virgin",
+      "genre": "Comedy"
+    },
+    {
+      "id": 20,
+      "name": "Pride and Prejudice",
+      "genre": "Romance"
+    }
+  ],
+  "cartoons": [
+    {
+      "id": 1,
+      "name": "Tom and Jerry"
+    },
+    {
+      "id": 2,
+      "name": "Pink Panther"
+    },
+    {
+      "id": 3,
+      "name": "Donald Duck"
+    }
+  ],
+  "users": [
+    {
+      "id": "hermione@gmail.com",
+      "name": "Hermione Granger",
+      "classId": 111
+    },
+    {
+      "id": "ron@gmail.com",
+      "name": "Ronald Weasley",
+      "classId": 222
+    },
+    {
+      "id": "harry@gmail.com",
+      "name": "Harry Potter",
+      "classId": 333
+    }
+  ],
+  "classes": [
+    {
+      "id": 111,
+      "courses": ["Divination", "Herbology", "History of Magic"]
+    },
+    {
+      "id": 222,
+      "courses": ["Magical Creatures", "Charms", "Transfiguration"]
+    },
+    {
+      "id": 333,
+      "courses": ["Defense Against the Dark Arts", "Potions Making", "Flying"]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+react query configs: 
+{
+     cacheTime: 5000, //default 5mins
+      staleTime: 30000, //default 
+      refetchInterval: 2000, //default false
+      enabled: false, //for fetching on click
+      onSuccess: onSuccess,
+      onError: onError,
+}
+
+
+  const { data: cartoons } = useFetchData(
+    "cartoons-data",
+    "http://localhost:4000/cartoons"
+  );
+
+  console.log("cartoons", cartoons);
