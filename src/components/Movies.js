@@ -25,6 +25,7 @@ const Movies = () => {
 
   return (
     <div>
+         <h7>Showing list of movies the 'old fashioned' way </h7>
       {error ? (
         <h2>{error}</h2>
       ) : (
