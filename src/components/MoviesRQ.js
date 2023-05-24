@@ -8,14 +8,16 @@ const MoviesRQ = () => {
   };
 
   const onError = (error) => {
-    console.log("fetch failed! :( ");
+    console.log("fetch failed! :( ", error);
   };
+
+  const fetchMovies =() => {
+    return axios.get("http://localhost:4000/movies");
+  }
 
   const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
     "movies-data",
-    () => {
-      return axios.get("http://localhost:4000/movies");
-    },
+    fetchMovies,
     {
       onSuccess: onSuccess,
       onError: onError,
