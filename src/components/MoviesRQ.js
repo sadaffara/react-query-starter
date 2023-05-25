@@ -7,7 +7,7 @@ const MoviesRQ = () => {
     return axios.get("http://localhost:4000/movies");
   }
 
-  const {data, isLoading}= useQuery(
+  const {data, isLoading, error, isError}= useQuery(
     'movies-data',
     fetchMovies,
   )
@@ -15,21 +15,26 @@ const MoviesRQ = () => {
 
   return (
     <div>
-     {
-      isLoading ? 
-      <div>
-        <h2>Loading...</h2>
-      </div>
-      :
-      <div>
-           <h2>Movies Page React Query</h2>
-        {
-          data.data.map((item)=>(
-            <div>{item.name}</div>
-          ))
-        }
-      </div>
-     }
+      {isError ? 
+        <h2>{error.message}</h2>
+        :
+        <div>
+            {
+              isLoading ? 
+              <div>
+                <h2>Loading...</h2>
+              </div>
+              :
+              <div>
+                  <h2>Movies Page React Query</h2>
+                {
+                  data.data.map((item)=>(
+                    <div>{item.name}</div>
+                  ))
+                }
+              </div>
+            }
+        </div>}
     </div>
   );
 };
