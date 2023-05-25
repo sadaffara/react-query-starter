@@ -7,6 +7,15 @@ const MoviesRQ = () => {
     return axios.get("http://localhost:4000/movies");
   }
 
+  const onSuccess = (data) => {
+    console.log("fetch succeeded! :) ", data);
+  };
+
+  const onError = (error) => {
+    console.log("fetch failed! :( ", error);
+  };
+
+
   const {
       data, 
       isLoading, 
@@ -17,8 +26,10 @@ const MoviesRQ = () => {
         'movies-data',
         fetchMovies,
         {
-          staleTime:3000,
-          cacheTime:1000,
+          // refetchInterval: 3000,
+          staleTime: 2000,
+          onSuccess: onSuccess,
+          onError: onError,
         }
       )
 
