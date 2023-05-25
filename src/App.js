@@ -7,8 +7,10 @@ import Home from "./components/Home";
 import MoviesRQ from "./components/MoviesRQ";
 import DependentQueries from "./components/DependentQueris";
 
+const queryClient = new QueryClient();
 function App() {
   return (
+    <QueryClientProvider client={queryClient}>
       <Router>
         <div>
           <nav>
@@ -45,6 +47,8 @@ function App() {
           </div>
         </div>
       </Router>
+      <ReactQueryDevtools initialIsopen={true} position="bottom-right" />
+    </QueryClientProvider>
   );
 }
 
