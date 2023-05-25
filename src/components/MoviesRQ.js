@@ -6,6 +6,9 @@ const MoviesRQ = () => {
   const fetchMovies = ()=>{
     return axios.get("http://localhost:4000/movies");
   }
+  const fetchCartoons = ()=>{
+    return axios.get("http://localhost:4000/cartoons");
+  }
 
   const onSuccess = (data) => {
     console.log("fetch succeeded! :) ", data);
@@ -14,7 +17,6 @@ const MoviesRQ = () => {
   const onError = (error) => {
     console.log("fetch failed! :( ", error);
   };
-
 
   const {
       data, 
@@ -30,9 +32,21 @@ const MoviesRQ = () => {
           staleTime: 2000,
           onSuccess: onSuccess,
           onError: onError,
-          enabled:false,
         }
       )
+
+  const {
+        data: cartoonsData, 
+        isLoading: cartoonsLoading
+      } = useQuery(
+                   'cartoons-data',
+                    fetchCartoons,
+                    {
+                      enabled: !!data,
+                      staleTime:2000,
+
+                    }
+                    )
 
 
   return (
@@ -54,6 +68,12 @@ const MoviesRQ = () => {
                   <h2>Movies Page React Query</h2>
                 {
                   data?.data.map((item)=>(
+                    <div>{item.name}</div>
+                  ))
+                }
+                   <h2>Cartoons</h2>
+                {
+                  cartoonsData?.data.map((item)=>(
                     <div>{item.name}</div>
                   ))
                 }
