@@ -7,10 +7,20 @@ const MoviesRQ = () => {
     return axios.get("http://localhost:4000/movies");
   }
 
-  const {data, isLoading, error, isError}= useQuery(
-    'movies-data',
-    fetchMovies,
-  )
+  const {
+      data, 
+      isLoading, 
+      error, 
+      isError,
+      isFetching,
+      }= useQuery(
+        'movies-data',
+        fetchMovies,
+        {
+          staleTime:3000,
+          cacheTime:1000,
+        }
+      )
 
 
   return (
