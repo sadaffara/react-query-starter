@@ -21,8 +21,8 @@ const MoviesRQ = () => {
       isLoading, 
       error, 
       isError,
-      isFetching,
-      }= useQuery(
+      refetch,
+      } = useQuery(
         'movies-data',
         fetchMovies,
         {
@@ -30,6 +30,7 @@ const MoviesRQ = () => {
           staleTime: 2000,
           onSuccess: onSuccess,
           onError: onError,
+          enabled:false,
         }
       )
 
@@ -40,6 +41,9 @@ const MoviesRQ = () => {
         <h2>{error.message}</h2>
         :
         <div>
+          <button
+            onClick={refetch}
+             >Fetch manually</button>
             {
               isLoading ? 
               <div>
@@ -49,7 +53,7 @@ const MoviesRQ = () => {
               <div>
                   <h2>Movies Page React Query</h2>
                 {
-                  data.data.map((item)=>(
+                  data?.data.map((item)=>(
                     <div>{item.name}</div>
                   ))
                 }
