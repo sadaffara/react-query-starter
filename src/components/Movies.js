@@ -25,14 +25,14 @@ const Movies = () => {
 
   return (
     <div>
-         <h7>Showing list of movies the 'old fashioned' way </h7>
+      <h7>Showing list of movies the 'old fashioned' way </h7>
       {error ? (
         <h2>{error}</h2>
       ) : (
         <div>
           {isLoading ? (
             <div>
-              <h2>Loading...</h2>
+              <h2>Loading Movies...</h2>
             </div>
           ) : (
             <div>

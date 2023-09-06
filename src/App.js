@@ -8,7 +8,7 @@ import MoviesRQ from "./components/MoviesRQ";
 import DependentQueries from "./components/DependentQueris";
 
 const queryClient = new QueryClient();
-function App() {
+const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <Router>
@@ -50,6 +50,6 @@ function App() {
       <ReactQueryDevtools initialIsopen={true} position="bottom-right" />
     </QueryClientProvider>
   );
-}
+};
 
 export default App;
