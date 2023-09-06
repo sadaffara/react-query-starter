@@ -4,20 +4,22 @@ import axios from "axios";
 
 const PaginatedMovies = () => {
   const [pageNumber, setPageNumber] = useState(1);
+  const [limit, setLimit] = useState(2);
 
-  const fetchMovies = (pageNumber) => {
+  const fetchMovies = (pageNumber, limit) => {
     return axios.get(
-      `http://localhost:4000/movies?_limit=5&_page=${pageNumber}`
+      `http://localhost:4000/movies?_limit=${limit}&_page=${pageNumber}`
     );
   };
 
   const { data, isLoading } = useQuery(
-    ["movies-paginated-data", pageNumber],
-    () => fetchMovies(pageNumber),
+    ["movies-paginated-data", pageNumber, limit],
+    () => fetchMovies(pageNumber, limit),
     {
       keepPreviousData: true,
     }
   );
+
   return (
     <div>
       {isLoading ? (
@@ -35,10 +37,26 @@ const PaginatedMovies = () => {
           ))}
         </div>
       )}
-      <p>
+
+      <div className="mt">
+        <div className="mb">
+          <span className="fw-bold">Show per page: </span>
+          <span>{limit}</span>
+        </div>
+        <button className="mr" onClick={() => setLimit(2)}>
+          2
+        </button>
+        <button className="mr" onClick={() => setLimit(5)}>
+          5
+        </button>
+        <button className="mr" onClick={() => setLimit(10)}>
+          10
+        </button>
+      </div>
+      <div className="mt">
         <span className="fw-bold">Page:</span> {pageNumber}
-      </p>
-      <p>
+      </div>
+      <div className="mt">
         <button
           className="mr"
           onClick={() => setPageNumber((page) => page - 1)}
@@ -52,7 +70,7 @@ const PaginatedMovies = () => {
         >
           Next Page
         </button>
-      </p>
+      </div>
     </div>
   );
 };

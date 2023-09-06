@@ -22,3 +22,11 @@ nav ul li {
 .fw-bold {
   font-weight: bold;
 }
+
+.mt {
+  margin-top: 16px;
+}
+
+.mb {
+  margin-bottom: 16px;
+}
