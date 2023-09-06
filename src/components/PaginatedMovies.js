@@ -13,7 +13,10 @@ const PaginatedMovies = () => {
 
   const { data, isLoading } = useQuery(
     ["movies-paginated-data", pageNumber],
-    () => fetchMovies(pageNumber)
+    () => fetchMovies(pageNumber),
+    {
+      keepPreviousData: true,
+    }
   );
   return (
     <div>
@@ -25,7 +28,10 @@ const PaginatedMovies = () => {
         <div>
           <h2>Movies Page React Query</h2>
           {data?.data.map((item) => (
-            <div key={item.id}>{item.name}</div>
+            <div key={item.id}>
+              <span className="fw-bold mr">{item.id}.</span>
+              {item.name}
+            </div>
           ))}
         </div>
       )}
