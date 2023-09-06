@@ -24,9 +24,6 @@ const App = () => {
               <li>
                 <Link to="/rq-movies">Movies RQ</Link>
               </li>
-              <li>
-                <Link to="/dependent-queries">Dependent Queries</Link>
-              </li>
             </ul>
           </nav>
           <div className="page-container">
@@ -47,7 +44,7 @@ const App = () => {
           </div>
         </div>
       </Router>
-      <ReactQueryDevtools initialIsopen={true} position="bottom-right" />
+      <ReactQueryDevtools initialIsOpen={true} position="bottom-right" />
     </QueryClientProvider>
   );
 };
