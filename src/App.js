@@ -5,7 +5,6 @@ import "./App.css";
 import Movies from "./components/Movies";
 import Home from "./components/Home";
 import MoviesRQ from "./components/MoviesRQ";
-import DependentQueries from "./components/DependentQueris";
 import PaginatedMovies from "./components/PaginatedMovies";
 
 const queryClient = new QueryClient();
