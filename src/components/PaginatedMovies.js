@@ -4,7 +4,7 @@ import axios from "axios";
 
 const PaginatedMovies = () => {
   const [pageNumber, setPageNumber] = useState(1);
-  const [limit, setLimit] = useState(2);
+  const [limit, setLimit] = useState(5);
 
   const fetchMovies = (pageNumber, limit) => {
     return axios.get(
