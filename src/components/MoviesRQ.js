@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import axios from "axios";
 
-const MoviesRQ = ({limit}) => {
+const MoviesRQ = () => {
   const fetchMovies = () => {
     return axios.get("http://localhost:4000/movies");
   };
@@ -52,7 +52,7 @@ const MoviesRQ = ({limit}) => {
             <div>
               <h2>Movies Page React Query</h2>
               {data?.data.map((item) => (
-                <div key={item.id} >{item.name}</div>
+                <div key={item.id}>{item.name}</div>
               ))}
               {cartoonsLoading ? (
                 <div>
@@ -62,7 +62,7 @@ const MoviesRQ = ({limit}) => {
                 <div>
                   <h2>Cartoons</h2>
                   {cartoonsData?.data.map((item) => (
-                    <div key={item.id} >{item.name}</div>
+                    <div key={item.id}>{item.name}</div>
                   ))}
                 </div>
               )}

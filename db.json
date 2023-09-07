@@ -115,6 +115,23 @@
       "name": "Donald Duck"
     }
   ],
+  "books": [
+    {
+      "id": 1,
+      "name": "Harry Potter and the Philosopher's Stone",
+      "author": "J. K. Rowling"
+    },
+    {
+      "id": 2,
+      "name": "And Then There Were None",
+      "author": "Agatha Christie"
+    },
+    {
+      "id": 3,
+      "name": "The Rose Code",
+      "author": "Kate Quinn"
+    }
+  ],
   "users": [
     {
       "id": "hermione@gmail.com",

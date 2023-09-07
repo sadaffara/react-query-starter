@@ -6,6 +6,7 @@ import Movies from "./components/Movies";
 import Home from "./components/Home";
 import MoviesRQ from "./components/MoviesRQ";
 import PaginatedMovies from "./components/PaginatedMovies";
+import AddBooks from "./components/AddBooks";
 
 const queryClient = new QueryClient();
 const App = () => {
@@ -27,6 +28,9 @@ const App = () => {
               <li>
                 <Link to="/rq-paginated-movies">Paginated Movies RQ</Link>
               </li>
+              <li>
+                <Link to="/rq-add-books">Add Books</Link>
+              </li>
             </ul>
           </nav>
           <div className="page-container">
@@ -42,6 +46,9 @@ const App = () => {
               </Route>
               <Route exact path="/rq-paginated-movies">
                 <PaginatedMovies />
+              </Route>
+              <Route exact path="/rq-add-books">
+                <AddBooks />
               </Route>
             </Switch>
           </div>
