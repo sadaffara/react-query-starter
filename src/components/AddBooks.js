@@ -25,7 +25,11 @@ const AddBooks = () => {
       name: bookName,
       author: authorName,
     };
-    mutate(payload);
+    mutate(payload, {
+      onSuccess: () => {
+        refetch();
+      },
+    });
     setAuthorName("");
     setBookName("");
   };
